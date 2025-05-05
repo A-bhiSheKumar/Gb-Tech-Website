@@ -14,7 +14,7 @@ import { FingerPrintIcon, UsersIcon, RocketLaunchIcon, SparklesIcon } from "@her
 import { PageTitle, Footer } from "@/widgets/layout";
 import { FeatureCard, TeamCard } from "@/widgets/cards";
 import { featuresData, teamData, contactData } from "@/data";
-
+import "./styles.css"; 
 export function Home() {
   useEffect(() => {
     // Add animation class to the hero section
@@ -151,7 +151,7 @@ export function Home() {
           <Button 
             variant="gradient" 
             size="lg" 
-            className="bg-white text-blue-600 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex items-center"
+            className="bg-white text-white hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex items-center"
           >
             <RocketLaunchIcon className="h-5 w-5 mr-2" />
             Get Started
@@ -168,29 +168,9 @@ export function Home() {
       </div>
     </div>
   </div>
-  <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10"></div>
+  <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/80 via-white/40 to-transparent pointer-events-none z-10"></div>
 </div>
-      {/* Add this to your global CSS or in a style tag */}
-      <style jsx>{`
-        .animate-gradient-x {
-          background-size: 300% 300%;
-          animation: gradient 15s ease infinite;
-        }
-        @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        .animate-float {
-          animation: float linear infinite;
-        }
-        @keyframes float {
-          0% { transform: translateY(0) rotate(0deg); }
-          100% { transform: translateY(-100vh) rotate(360deg); }
-        }
-      `}</style>
-
-      <section className="-mt-20 bg-white px-4 pb-20 pt-4 relative z-20">
+      <section className="-mt-20 from-white via-white/80px-4 pb-20 pt-4 relative z-20">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map(({ color, title, icon, description }) => (
@@ -230,6 +210,7 @@ export function Home() {
                 With our proven methodologies and customer-centric approach, we ensure seamless 
                 integration and maximum value from our solutions.
               </Typography>
+            
               <Button 
                 variant="gradient" 
                 color="blue" 

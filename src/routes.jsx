@@ -12,18 +12,18 @@ export const routes = [
     element: <Profile />,
   },
   {
-    name: "Sign In",
+    name: "Team",
     path: "/sign-in",
     element: <SignIn />,
   },
   {
-    name: "Sign Up",
+    name: "Contact",
     path: "/sign-up",
     element: <SignUp />,
   },
   {
-    name: "Docs",
-    href: "https://www.material-tailwind.com/docs/react/installation",
+    name: "About",
+    href: "/about",
     target: "_blank",
     element: "",
   },
