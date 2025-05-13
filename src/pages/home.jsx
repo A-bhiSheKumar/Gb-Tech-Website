@@ -15,6 +15,7 @@ import { PageTitle, Footer } from "@/widgets/layout";
 import { FeatureCard, TeamCard } from "@/widgets/cards";
 import { featuresData, teamData, contactData } from "@/data";
 import "./styles.css"; 
+import { DraggableCardDemo } from "./gallery";
 export function Home() {
   useEffect(() => {
     // Add animation class to the hero section
@@ -258,6 +259,7 @@ export function Home() {
         </div>
       </section>
 
+<DraggableCardDemo />
       {/* Rest of your sections with similar enhancements */}
       <section className="px-4 pt-20 pb-48 relative overflow-hidden">
         <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
