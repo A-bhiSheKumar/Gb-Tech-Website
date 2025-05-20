@@ -1,4 +1,6 @@
 import { Home, Profile, SignIn, SignUp } from "@/pages";
+import { element } from "prop-types";
+import { WavyBackgroundDemo } from "./pages/hero";
 
 export const routes = [
   {

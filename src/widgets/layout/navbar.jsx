@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-
+import GbTechLogo from "../../../public/img/gbtechlogo.png"
 export function Navbar({ brandName, routes, action }) {
   const [openNav, setOpenNav] = React.useState(false);
 
@@ -63,11 +63,13 @@ export function Navbar({ brandName, routes, action }) {
   return (
     <MTNavbar color="transparent" className="p-3">
       <div className="container mx-auto flex items-center justify-between text-white">
-        <Link to="/">
-          <Typography className="mr-4 ml-2 cursor-pointer py-1.5 font-bold">
-            {brandName}
-          </Typography>
-        </Link>
+       <Link to="/" className="flex items-center gap-2">
+  <img src={GbTechLogo} alt="GbTech Logo" className="h-8 w-auto" />
+  <Typography className="cursor-pointer py-1.5 font-bold">
+    {brandName}
+  </Typography>
+</Link>
+
         <div className="hidden lg:block">{navList}</div>
         <div className="hidden gap-2 lg:flex">
           <a
