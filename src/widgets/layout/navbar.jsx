@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import GbTechLogo from "../../../public/img/gbtechlogo.png"
+import GbTechLogo from "../../assets/gbtechlogo.png"
 export function Navbar({ brandName, routes, action }) {
   const [openNav, setOpenNav] = React.useState(false);
 

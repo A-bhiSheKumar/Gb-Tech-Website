@@ -17,7 +17,7 @@ import {
 const Services = () => {
   return (
   <>
-    <section className="-mt-20 from-white via-white/80px-4 pb-20 pt-4 relative z-20">
+    <section className="-mt-20  via-white/80px-4 pb-20 pt-4 relative z-20">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map(({ color, title, icon, description }) => (
