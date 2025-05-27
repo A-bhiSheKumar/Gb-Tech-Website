@@ -25,33 +25,11 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-   <section className="relative py-20 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
-      {/* <svg
-    className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full pointer-events-none opacity-5 w-1/2"
-    xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="none"
-    viewBox="0 0 100 100"
-    style={{
-      maskImage: 'linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)',
-      WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)',
-    }}
-  >
-    <defs>
-      <pattern
-        id="grid"
-        width="5"
-        height="5"
-        patternUnits="userSpaceOnUse"
-      >
-        <path d="M 5 0 L 0 0 0 5" fill="none" stroke="#000000" strokeWidth="0.4" />
-      </pattern>
-    </defs>
-    <rect width="100%" height="100%" fill="url(#grid)" />
-  </svg> */}
+   <section className="relative py-20">
     <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {/* Badge */}
         <div className="inline-block px-4 py-1 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 mb-4">
-          Working Process
+          ... Working Process
         </div>
 
         {/* Title */}
@@ -73,7 +51,7 @@ const HowItWorks = () => {
 
         {/* Final CTA */}
         <p className="mt-16 text-sm text-gray-800 font-semibold">
-          Need more help? Go to our <a href="#" className="text-green-600 underline">Contact Us</a>
+          Need more help? Go to our <a href="#" className="text-orange-600 underline">Contact Us</a>
         </p>
       </div>
     </section>

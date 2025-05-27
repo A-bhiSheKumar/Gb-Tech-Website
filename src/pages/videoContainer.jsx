@@ -35,14 +35,13 @@ const VideoContainer = () => {
 
         {/* Vertical Banners: Happy + Clients */}
        <div className="absolute top-1/4 left-[-10px] flex flex-col gap-4 z-50">
-  <span className="bg-gradient-to-br from-blue-500 to-black text-white font-bold px-4 py-1 rounded-xl shadow-md text-sm mb-4">
-    Happy
-  </span>
-  <span className="bg-gradient-to-br from-blue-500 to-black text-white font-bold px-4 py-1 rounded-xl shadow-md text-sm mt-14">
-    Clients
-  </span>
-</div>
-
+            <span className="bg-gradient-to-br from-blue-500 to-black text-white font-bold px-4 py-1 rounded-xl shadow-md text-sm mb-4">
+            Happy
+         </span>
+            <span className="bg-gradient-to-br from-blue-500 to-black text-white font-bold px-4 py-1 rounded-xl shadow-md text-sm mt-20">
+             Clients
+            </span>
+     </div>
         {/* Mute/Unmute Button */}
         <button
           onClick={toggleMute}

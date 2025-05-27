@@ -65,13 +65,13 @@ const TestimonialCard = ({ title, content, name, role, flag, image }) => (
 
 const Testimonials = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-blue-50 to-white">
+    <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
         
         {/* Left Side - Heading */}
         <div className="flex-1">
           <div className="inline-block px-4 py-1 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 mb-4">
-            Testimonials
+           ... Testimonials
           </div>
           <h2 className="text-5xl font-bold text-gray-900 mb-4">
             What our<br />clients say
@@ -79,7 +79,7 @@ const Testimonials = () => {
           <p className="text-gray-600 text-base mb-6">
             See how our expert solutions have helped businesses achieve success through our client’s reviews.
           </p>
-          <button className="flex items-center gap-2 px-5 py-2 border border-green-600 text-green-600 rounded hover:bg-green-50 transition">
+          <button className="flex items-center gap-2 px-5 py-2 border border-orange-600 text-orange-600 rounded hover:bg-orange-50 transition">
             📞 Contact Us
           </button>
         </div>

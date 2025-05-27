@@ -7,25 +7,24 @@ import Services from "./services";
 import { HeroScrollDemo } from "./flipImage";
 import Testimonials from "./testimonials";
 import HowItWorks from "./howItWork";
+import GalleryOfSuccess from "./gallery";
+import AboutUsSection from "./aboutUs";
+import MissionVission from "./missionVission";
 export function Home() {
-  useEffect(() => {
-    // Add animation class to the hero section
-    const hero = document.querySelector('.hero-section');
-    if (hero) {
-      hero.classList.add('animate-gradient');
-    }
-  }, []);
 
   return (
     <>
-      <WavyBackgroundDemo /> 
-      <HeroScrollDemo />
-       <Services />
-       <HowItWorks />
-       <Testimonials />
-      <div className="from-blue-50 to-white">
-        <Footer />
-      </div>
+       <WavyBackgroundDemo />
+          <HeroScrollDemo />
+       <div className="  min-h-screen ">
+      <Services />
+      <HowItWorks />
+      <Testimonials />
+      <MissionVission />
+      <GalleryOfSuccess />
+      <AboutUsSection />
+      <Footer />
+    </div>
     </>
   );
 }
