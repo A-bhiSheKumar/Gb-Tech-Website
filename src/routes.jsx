@@ -1,4 +1,4 @@
-import { Home, Profile } from "@/pages";
+import { Home } from "@/pages";
 
 
 export const routes = [
@@ -7,11 +7,7 @@ export const routes = [
     path: "/home",
     element: <Home />,
   },
-  {
-    name: "profile",
-    path: "/profile",
-    element: <Profile />,
-  },
+
   {
     name: "About",
     href: "/about",

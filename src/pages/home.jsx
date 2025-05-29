@@ -10,15 +10,16 @@ import HowItWorks from "./howItWork";
 import GalleryOfSuccess from "./gallery";
 import AboutUsSection from "./aboutUs";
 import MissionVission from "./missionVission";
+import Clients from "./clients";
 export function Home() {
 
   return (
     <>
        <WavyBackgroundDemo />
-          <HeroScrollDemo />
        <div className="  min-h-screen ">
       <Services />
       <HowItWorks />
+      <Clients />
       <Testimonials />
       <MissionVission />
       <GalleryOfSuccess />

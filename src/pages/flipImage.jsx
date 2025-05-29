@@ -1,6 +1,7 @@
 "use client";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import React from "react";
+import HeroVideoContainer from "./heroVideoContainer";
 
 export function HeroScrollDemo() {
   return (
@@ -17,15 +18,7 @@ export function HeroScrollDemo() {
         //   </>
         // }
       >
-        <video
-          src="https://videos.pexels.com/video-files/6774633/6774633-uhd_2560_1440_30fps.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
-          draggable={false}
-        />
+       <HeroVideoContainer />
       </ContainerScroll>
     </div>
   );
