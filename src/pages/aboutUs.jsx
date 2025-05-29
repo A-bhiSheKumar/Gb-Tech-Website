@@ -28,7 +28,7 @@ export default function AboutUsSection() {
   return (
     <section className="py-16 px-6 bg-white text-gray-800">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4">Our Mission & Team</h2>
+        <h2 className="text-4xl font-bold mb-4">Our Team</h2>
         <p className="text-lg text-gray-600 mb-12">
           Committed to revolutionizing employee benefits through innovative
           technology and personalized solutions.

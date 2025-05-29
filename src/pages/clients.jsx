@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 
 const texts = [
   {
-    title: 'Integrate MakeForms with your favourite apps',
-    desc: 'Automate and personalize your forms. Integrate existing tools from your workflow to build a close knit data management system.'
+    title: 'Employers:',
+    desc: 'Gain control over benefit costs while offering customizable plans that meet your teams unique needs'
   },
   {
-    title: 'Boost Productivity',
-    desc: 'Connect your tools to reduce manual work and boost efficiency through seamless integrations.'
+    title: 'Brokers:',
+    desc: 'Streamline quoting and enrollment processes with our intuitive tools, enhancing client satisfaction.'
   },
   {
-    title: 'Centralize Your Data',
-    desc: 'Unify all data from various platforms in one place for easier tracking and decision-making.'
+    title: 'Third-Party Administrators (TPAs):',
+    desc: 'Integrate claims management effortlessly, ensuring compliance and operational efficiency.'
   }
 ];
 
@@ -37,7 +37,7 @@ const Clients = () => {
 
   const columnVariants = {
     animate: {
-      y: ["0%", "-100%"],
+      y: ["0%", "-50%"],
       transition: {
         repeat: Infinity,
         duration: 20,
@@ -46,24 +46,13 @@ const Clients = () => {
     }
   };
 
-  const logoVariants = {
-    initial: { y: 0 },
-    animate: (i) => ({
-      y: [0, -10, 0, 10, 0],
-      transition: {
-        duration: 3 + Math.random() * 2,
-        repeat: Infinity,
-        repeatType: "loop",
-        ease: "easeInOut",
-        delay: i * 0.3
-      }
-    })
-  };
-
   return (
-    <div className="w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-32 py-20 bg-white">
+    <div className="w-full flex flex-col md:flex-row items-center justify-between px-8 md:px-40 py-20 bg-white">
       {/* Text Section */}
-      <div className="w-full md:w-1/2 mb-12 md:mb-0 text-center md:text-left">
+      <div className="w-full md:w-1/2 mb-12 md:mb-0 text-center md:text-left md:ml-40">
+        <div className="inline-block px-4 py-1 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 mb-4">
+          ... Who We Serve
+        </div>
         <h2 className="text-3xl font-bold text-gray-800 mb-4">
           {texts[currentText].title}
         </h2>
@@ -72,33 +61,26 @@ const Clients = () => {
         </p>
       </div>
 
-      {/* Logos - 2 Columns */}
-      <div className="w-full md:w-1/2 flex gap-6 justify-center">
-        {[0, 1].map((colOffset) => (
-          <div key={colOffset} className="w-1/2 relative h-[400px] overflow-hidden">
-            <motion.div
-              variants={columnVariants}
-              initial="initial"
-              animate="animate"
-              className="flex flex-col gap-6"
+      {/* Zig-Zag Moving Logos */}
+      <div className="w-full md:w-[35%] h-[400px] overflow-hidden relative">
+        <motion.div
+          variants={columnVariants}
+          initial="initial"
+          animate="animate"
+          className="flex flex-col"
+        >
+          {[...logos, ...logos].map((logo, idx) => (
+            <div
+              key={`logo-${idx}`}
+              className={`flex items-center justify-center bg-gray-50 rounded-lg w-[200px] h-[70px] mb-4 
+                ${idx % 2 === 0 ? 'ml-0 self-start' : 'ml-auto self-end'}`}
             >
-              {[...logos, ...logos].map((logo, idx) => (
-                <motion.div
-                  key={`col${colOffset}-${idx}`}
-                  custom={idx + colOffset * 0.5}
-                  variants={logoVariants}
-                  initial="initial"
-                  animate="animate"
-                  className="flex items-center justify-center bg-gray-50 rounded-lg p-4 w-full h-[80px]"
-                >
-                  <span className="text-lg font-medium text-gray-700 capitalize">
-                    {logo}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        ))}
+              <span className="text-md font-medium text-gray-700 capitalize">
+                {logo}
+              </span>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );
