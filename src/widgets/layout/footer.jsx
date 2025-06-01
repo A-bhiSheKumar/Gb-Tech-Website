@@ -3,46 +3,52 @@ import { Typography, IconButton } from "@material-tailwind/react";
 
 const year = new Date().getFullYear();
 
-export function Footer({ title, description, socials, menus, copyright }) {
+export function Footer({
+  title,
+  description,
+  socials,
+  menus,
+  copyright,
+}) {
   return (
-    <footer className="relative px-4 pt-8 pb-6">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap pt-6 text-center lg:text-left">
-          <div className="w-full px-4 lg:w-6/12">
-            <Typography variant="h4" className="mb-4" color="blue-gray">
+    <footer className="relative px-4 pt-10 pb-6 bg-white dark:bg-black">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-10">
+          {/* Left Section */}
+          <div className="text-center lg:text-left lg:w-1/2">
+            <Typography variant="h4" className="mb-4 text-black dark:text-white">
               {title}
             </Typography>
-            <Typography className="font-normal text-blue-gray-500 lg:w-2/5">
+            <Typography className="max-w-md mx-auto lg:mx-0 font-normal text-blue-gray-500 dark:text-gray-400">
               {description}
             </Typography>
-            <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">
+
+            {/* Social Icons */}
+            <div className="flex justify-center lg:justify-start gap-4 mt-6">
               {socials.map(({ color, name, path }) => (
-                <a
-                  key={name}
-                  href={path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IconButton color="white" className="rounded-full shadow-none bg-transparent">
+                <a key={name} href={path} target="_blank" rel="noopener noreferrer" aria-label={name}>
+                  <IconButton color="white" className="rounded-full shadow-md bg-gray-100 dark:bg-gray-800 hover:scale-110 transition-transform">
                     <Typography color={color}>
-                      <i className={`fa-brands fa-${name}`} />
+                      <i className={`fa-brands fa-${name} text-xl`} />
                     </Typography>
                   </IconButton>
                 </a>
               ))}
             </div>
           </div>
-          <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
+
+          {/* Right Section */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full lg:w-1/2">
             {menus.map(({ name, items }) => (
               <div key={name}>
                 <Typography
                   variant="small"
                   color="blue-gray"
-                  className="mb-2 block font-medium uppercase"
+                  className="mb-3 block font-semibold uppercase tracking-wide dark:text-white"
                 >
                   {name}
                 </Typography>
-                <ul className="mt-3">
+                <ul className="space-y-2">
                   {items.map((item) => (
                     <li key={item.name}>
                       <Typography
@@ -51,7 +57,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
                         target="_blank"
                         rel="noreferrer"
                         variant="small"
-                        className="mb-2 block font-normal text-blue-gray-500 hover:text-blue-gray-700"
+                        className="block font-normal text-blue-gray-500 hover:text-blue-700 dark:text-gray-400 dark:hover:text-white transition-colors"
                       >
                         {item.name}
                       </Typography>
@@ -62,16 +68,13 @@ export function Footer({ title, description, socials, menus, copyright }) {
             ))}
           </div>
         </div>
-        <hr className="my-6 border-gray-300" />
-        <div className="flex flex-wrap items-center justify-center md:justify-between">
-          <div className="mx-auto w-full px-4 text-center">
-            <Typography
-              variant="small"
-              className="font-normal text-blue-gray-500"
-            >
-              {copyright}
-            </Typography>
-          </div>
+
+        <hr className="my-8 border-gray-300 dark:border-gray-700" />
+
+        <div className="text-center">
+          <Typography variant="small" className="text-blue-gray-500 dark:text-gray-400">
+            {copyright}
+          </Typography>
         </div>
       </div>
     </footer>
@@ -81,78 +84,58 @@ export function Footer({ title, description, socials, menus, copyright }) {
 Footer.defaultProps = {
   title: "Gb-Tech",
   description:
-    "Easy to use React components for Tailwind CSS and Material Design.",
+    "We offer innovative solutions with excellence, reliability, and commitment to your growth.",
   socials: [
     {
-      color: "gray",
-      name: "twitter",
-      path: "https://www.twitter.com/creativetim",
+      color: "blue",
+      name: "linkedin",
+      path: "https://www.linkedin.com/company/gbtechservice",
     },
     {
-      color: "gray",
-      name: "youtube",
-      path: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
-    },
-    {
-      color: "gray",
-      name: "instagram",
-      path: "https://www.instagram.com/creativetimofficial/",
-    },
-    {
-      color: "black",
-      name: "github",
-      path: "https://github.com/creativetimofficial/material-tailwind",
+      color: "blue",
+      name: "facebook",
+      path: "https://www.facebook.com/gbtechservice",
     },
   ],
   menus: [
     {
-      name: "useful links",
+      name: "Quick Links",
       items: [
-        { name: "About Us", path: "https://www.creative-tim.com/presentation" },
-        { name: "Blog", path: "https://www.creative-tim.com/blog" },
-        {
-          name: "Github",
-          path: "https://www.github.com/creativetimofficial/material-tailwind?ref=mtk",
-        },
-        {
-          name: "Free Products",
-          path: "https://www.creative-tim.com/templates/free?ref=mtk",
-        },
+        { name: "Solutions", path: "#" },
+        { name: "Resources", path: "#" },
+        { name: "About Us", path: "#" },
+        { name: "Contact", path: "#" },
       ],
     },
     {
-      name: "other resources",
+      name: "Legal",
+      items: [
+        { name: "Privacy Policy", path: "#" },
+        { name: "Terms of Service", path: "#" },
+        { name: "HIPAA Notice", path: "#" },
+      ],
+    },
+    {
+      name: "Contact Information",
       items: [
         {
-          name: "MIT License",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/LICENSE.md?ref=mtk",
+          name: "Email: director@gbtechservice.com",
+          path: "mailto:director@gbtechservice.com",
         },
         {
-          name: "Contribute",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CONTRIBUTING.md?ref=mtk",
+          name: "Phone: +91-9830288526",
+          path: "tel:+919830288526",
         },
         {
-          name: "Change Log",
-          path: "https://github.com/creativetimofficial/material-tailwind/blob/main/CHANGELOG.md?ref=mtk",
-        },
-        {
-          name: "Contact Us",
-          path: "https://creative-tim.com/contact-us?ref=mtk",
+          name: "Address: Unit - 9ES5, Mani Casadona, Action Area - IIF, Newtown, Kolkata, West Bengal 700156, India",
+          path: "https://maps.google.com?q=Mani+Casadona+Newtown+Kolkata",
         },
       ],
     },
   ],
   copyright: (
     <>
-      Copyright © {year} Material Tailwind by{" "}
-      <a
-        href="https://www.creative-tim.com?ref=mtk"
-        target="_blank"
-        className="text-blue-gray-500 transition-colors hover:text-blue-500"
-      >
-        Creative Tim
-      </a>
-      .
+      © {year} Gb-Tech. All rights reserved.
     </>
   ),
 };

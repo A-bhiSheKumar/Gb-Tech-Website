@@ -61,7 +61,7 @@ export default function Roadmap() {
             Company Growth Journey
           </span> */}
              <div className="inline-block px-4 py-1 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 mb-4">
-              Company Growth Journey
+              ... Company Growth Journey
         </div>
 
           <div className="mt-2 h-1 w-24 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto rounded-full" />
