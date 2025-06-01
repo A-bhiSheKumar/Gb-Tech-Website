@@ -1,57 +1,87 @@
-"use client"
-import React from 'react';
-import { FaTools, FaChartLine, FaGlobe } from 'react-icons/fa';
+import React from "react";
+import {
+  FaUserCheck,
+  FaFileAlt,
+  FaCogs,
+  FaChartBar,
+  FaProjectDiagram,
+  FaHeadset,
+} from "react-icons/fa";
 
-const steps = [
+const features = [
   {
-    title: 'Choose Services',
+    title: "Plan Design",
     description:
-      'Select from our IT offerings, including custom software development, app creation, DevOps, and AI/ML solutions, designed to match your needs.',
-    icon: <FaTools className="text-blue-600 text-3xl" />,
+      "Utilize our flexible builder to create self-funded plans with embedded actuarial insights for smarter, data-driven decisions.",
+    icon: <FaProjectDiagram className="text-blue-600 text-3xl" />,
   },
   {
-    title: 'Project Analysis',
+    title: "Enrollment Platform",
     description:
-      'We analyze your IT requirements, assess potential challenges, and develop a strategic roadmap to ensure project success.',
-    icon: <FaChartLine className="text-blue-600 text-3xl" />,
+      "Offer employees a mobile-responsive, multilingual portal with Single Sign-On (SSO) and dependent verification for seamless enrollment.",
+    icon: <FaUserCheck className="text-blue-600 text-3xl" />,
   },
   {
-    title: 'Got Final Result',
+    title: "Claims Management",
     description:
-      'From development to deployment, we deliver optimized IT solutions that streamline operations and achieve your goals effectively.',
-    icon: <FaGlobe className="text-blue-600 text-3xl" />,
+      "Monitor and manage claims in real-time with AI-driven fraud detection and secure document handling for fast and accurate resolutions.",
+    icon: <FaFileAlt className="text-blue-600 text-3xl" />,
+  },
+  {
+    title: "Administrative Tools",
+    description:
+      "Streamline operations with payroll sync, eligibility management, and ACA compliance reporting all in one place.",
+    icon: <FaCogs className="text-blue-600 text-3xl" />,
+  },
+  {
+    title: "Data & Insights",
+    description:
+      "Access customizable dashboards, predictive analytics, and industry benchmarking tools to guide strategic benefit decisions.",
+    icon: <FaChartBar className="text-blue-600 text-3xl" />,
+  },
+  {
+    title: "Customer Support",
+    description:
+      "Get comprehensive and responsive support to ensure your team always feels heard, valued, and empowered.",
+    icon: <FaHeadset className="text-blue-600 text-3xl" />,
   },
 ];
 
 const HowItWorks = () => {
   return (
-   <section className="relative py-20">
-    <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    <section className="relative py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         {/* Badge */}
         <div className="inline-block px-4 py-1 text-sm font-semibold text-white rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 mb-4">
-          ... Working Process
+          End-to-End Benefits Management
         </div>
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">How It Works</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+          Robust Features for Comprehensive Benefits Management
+        </h2>
         <p className="text-gray-600 text-lg mb-12">
-          Simplifying IT Tasks with Tailored Solutions.
+          From plan creation to ongoing support — everything you need to manage employee benefits with confidence and ease.
         </p>
 
-        {/* Steps Grid */}
+        {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-          {steps.map((step, idx) => (
+          {features.map((feature, idx) => (
             <div key={idx} className="flex flex-col items-center text-center md:text-left md:items-start">
-              <div className="mb-4 p-4 bg-white rounded-md shadow-md">{step.icon}</div>
-              <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-              <p className="text-gray-600 text-sm">{step.description}</p>
+              <div className="mb-4 p-4 bg-white rounded-md shadow-md">{feature.icon}</div>
+              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+              <p className="text-gray-600 text-sm">{feature.description}</p>
             </div>
           ))}
         </div>
 
         {/* Final CTA */}
         <p className="mt-16 text-sm text-gray-800 font-semibold">
-          Need more help? Go to our <a href="#" className="text-orange-600 underline">Contact Us</a>
+          Need assistance? Visit our{" "}
+          <a href="#" className="text-orange-600 underline">
+            Contact Us
+          </a>{" "}
+          page to get in touch.
         </p>
       </div>
     </section>

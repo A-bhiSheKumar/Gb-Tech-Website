@@ -104,7 +104,7 @@ function VideoCard({ src, title, description }) {
         autoPlay
         loop
         playsInline
-        className={`w-full h-full object-cover transition-all duration-300 ${isHovered ? 'brightness-100' : 'brightness-80'}`}
+        className={`w-full h-full object-cover transition-all duration-300 ${isHovered ? 'brightness-100' : 'brightness-90'}`}
       />
       
       {/* Video Info Overlay */}

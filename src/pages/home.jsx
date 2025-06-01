@@ -11,6 +11,7 @@ import GalleryOfSuccess from "./gallery";
 import AboutUsSection from "./aboutUs";
 import MissionVission from "./missionVission";
 import Clients from "./clients";
+import Roadmap from "./roadMap";
 export function Home() {
 
   return (
@@ -22,6 +23,7 @@ export function Home() {
         <MissionVission />
         <Testimonials />
         <Clients />
+        <Roadmap />
         <GalleryOfSuccess />
         <AboutUsSection />
         <Footer />
