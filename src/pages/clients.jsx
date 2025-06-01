@@ -17,13 +17,22 @@ const texts = [
 ];
 
 const logos = [
-  'razorpay',
-  'hubspot',
-  'zapier',
-  'stripe',
-  'gumroad',
-  'mailchimp'
+  'Nexcaliber',
+  'Brookshire Brothers',
+  'Entira Clinic',
+  'Panhandle First Bank',
+  'Intercity Investment',
+  'MedMutual',
+  '5 star life insurance company',
+  'Beam',
+  'Beazley',
+  'Max care Dental',
+  'Detego Health',
+  'ITEDIUM',
+  'Tribeca Care',
+  'Progressive Laboratories'
 ];
+
 
 const Clients = () => {
   const [currentText, setCurrentText] = useState(0);

@@ -23,9 +23,9 @@ const HeroVideoContainer = () => {
   useEffect(() => {
     if (!isVisible) return;
 
-    const timeouts = workflowSteps.map((_, index) =>
-      setTimeout(() => setActiveStep(index), 1000 + index * 1000)
-    );
+ const timeouts = workflowSteps.map((_, index) =>
+  setTimeout(() => setActiveStep(index), 300 + index * 500) // Reduced delays
+);
 
     return () => timeouts.forEach(clearTimeout);
   }, [isVisible]);

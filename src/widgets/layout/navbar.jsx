@@ -9,15 +9,22 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import GbTechLogo from "../../assets/gbtechlogo.png"
+import GbTechLogo from "../../assets/gbtechlogo.png";
+import BookDemoModal from "@/shared/BookingModel/BookingModel";
+
+
 export function Navbar({ brandName, routes, action }) {
   const [openNav, setOpenNav] = React.useState(false);
+  const [openModal, setOpenModal] = React.useState(false);
+
+  const handleOpenModal = () => setOpenModal(!openModal);
 
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
+    const handleResize = () => {
+      if (window.innerWidth >= 960) setOpenNav(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navList = (
@@ -61,78 +68,83 @@ export function Navbar({ brandName, routes, action }) {
   );
 
   return (
-    <MTNavbar color="transparent" className="p-3">
-      <div className="container mx-auto flex items-center justify-between text-white">
-       <Link to="/" className="flex items-center gap-2">
-  <img src={GbTechLogo} alt="GbTech Logo" className="h-8 w-auto" />
-  <Typography className="cursor-pointer py-1.5 font-bold">
-    {brandName}
-  </Typography>
-</Link>
+    <>
+      <MTNavbar color="transparent" className="p-3">
+        <div className="container mx-auto flex items-center justify-between text-white">
+          <Link to="/" className="flex items-center gap-2">
+            <img src={GbTechLogo} alt="GbTech Logo" className="h-8 w-auto" />
+            <Typography className="cursor-pointer py-1.5 font-bold">
+              {brandName}
+            </Typography>
+          </Link>
 
-        <div className="hidden lg:block">{navList}</div>
-        <div className="hidden gap-2 lg:flex">
-          <a
-            href="https://www.material-tailwind.com/blocks?ref=mtkr"
-            target="_blank"
+          <div className="hidden lg:block">{navList}</div>
+
+          <div className="hidden gap-2 lg:flex">
+            <a
+              href="https://www.material-tailwind.com/blocks?ref=mtkr"
+              target="_blank"
+            >
+              <Button variant="text" size="sm" color="white" fullWidth>
+                Solutions
+              </Button>
+            </a>
+            {React.cloneElement(action, {
+              className: "hidden lg:inline-block",
+              onClick: handleOpenModal,
+            })}
+          </div>
+
+          <IconButton
+            variant="text"
+            size="sm"
+            color="white"
+            className="ml-auto text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+            onClick={() => setOpenNav(!openNav)}
           >
-            <Button variant="text" size="sm" color="white" fullWidth>
-              Solutions
-            </Button>
-          </a>
-          {React.cloneElement(action, {
-            className: "hidden lg:inline-block",
-          })}
+            {openNav ? (
+              <XMarkIcon strokeWidth={2} className="h-6 w-6" />
+            ) : (
+              <Bars3Icon strokeWidth={2} className="h-6 w-6" />
+            )}
+          </IconButton>
         </div>
-        <IconButton
-          variant="text"
-          size="sm"
-          color="white"
-          className="ml-auto text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-          onClick={() => setOpenNav(!openNav)}
+
+        <MobileNav
+          className="rounded-xl bg-white px-4 pt-2 pb-4 text-blue-gray-900"
+          open={openNav}
         >
-          {openNav ? (
-            <XMarkIcon strokeWidth={2} className="h-6 w-6" />
-          ) : (
-            <Bars3Icon strokeWidth={2} className="h-6 w-6" />
-          )}
-        </IconButton>
-      </div>
-      <MobileNav
-        className="rounded-xl bg-white px-4 pt-2 pb-4 text-blue-gray-900"
-        open={openNav}
-      >
-        <div className="container mx-auto">
-          {navList}
-          <a
-            href="https://www.material-tailwind.com/blocks/react?ref=mtkr"
-            target="_blank"
-            className="mb-2 block"
-          >
-            <Button variant="text" size="sm" fullWidth>
-              pro version
-            </Button>
-          </a>
-          {React.cloneElement(action, {
-            className: "w-full block",
-          })}
-        </div>
-      </MobileNav>
-    </MTNavbar>
+          <div className="container mx-auto">
+            {navList}
+            <a
+              href="https://www.material-tailwind.com/blocks/react?ref=mtkr"
+              target="_blank"
+              className="mb-2 block"
+            >
+              <Button variant="text" size="sm" fullWidth>
+                pro version
+              </Button>
+            </a>
+            {React.cloneElement(action, {
+              className: "w-full block",
+              onClick: handleOpenModal,
+            })}
+          </div>
+        </MobileNav>
+      </MTNavbar>
+
+      {/* Book Demo Modal */}
+      <BookDemoModal open={openModal} handleOpen={handleOpenModal} />
+    </>
   );
 }
 
 Navbar.defaultProps = {
   brandName: "Gb-Tech",
   action: (
-    <a
-      href="https://www.creative-tim.com/product/material-tailwind-kit-react"
-      target="_blank"
-    >
-      <Button variant="gradient" size="sm" fullWidth>
-        Book Demo
-      </Button>
-    </a>
+    <Button variant="gradient" size="sm" fullWidth>
+      Book Demo
+    </Button>
   ),
 };
 
