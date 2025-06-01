@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Footer } from "@/widgets/layout";
 import "./styles.css";
