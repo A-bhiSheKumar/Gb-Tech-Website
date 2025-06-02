@@ -37,7 +37,7 @@ export default function BookDemoModal({ open, handleOpen }) {
               projects and features faster."
             </p>
             <p className="mt-2 text-xs font-semibold">
-              — Mollie Hall, Web Developer, Sisyphus
+              — GB Tech
             </p>
           </div>
         </div>

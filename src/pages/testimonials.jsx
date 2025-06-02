@@ -2,40 +2,31 @@ import React from "react";
 
 const testimonials = [
   {
-    title: "AI/ML Solutions",
+    title: "Owner and President of Nexcaliber and Entira Incorporated",
     content:
-      "Our collaboration with Vasoya Brothers Infotech on an AI/ML solution was outstanding. The team demonstrated excellent technical skills, delivering a tailored solution...",
-    name: "Jason",
-    role: "Software Engineer",
-    flag: "🇮🇹",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    title: "Custom Software Development",
-    content:
-      "The VBI team delivered an excellent custom software solution tailored to our business needs. Their proactive approach ensured seamless integration.",
-    name: "Joquin Lasa",
-    role: "Software Engineer",
-    flag: "🇵🇭",
+      "We've worked with GBTECH SERVICE for over 10 years and their support, service quality, and responsiveness—despite the time zone difference—have been outstanding. Their team is a pleasure to work with, and I’m happy to personally share our success stories.",
+    name: "David Feachen",
+    role: "Owner",
+    flag: "🇺🇸",
     image: "",
   },
   {
-    title: "Web Development",
+    title: "iTedium",
     content:
-      "Vasoya Brothers Infotech created an amazing website for us. Their professionalism and prompt delivery impressed me.",
-    name: "Eszter Udvarnoki",
-    role: "CEO of Tech Innovators Inc",
+      "Partnering with GB Tech Service under Anupam Biswas’s visionary leadership has transformed our business through innovative, scalable solutions and a strong customer-first approach. His strategic insight, commitment to quality, and hands-on leadership make GB Tech a standout technology partner.",
+    name: "Robert A. Meyers, Jr",
+    role: "Founder & CEO of iTedium",
     flag: "🇺🇸",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: "",
   },
   {
-    title: "QA & Testing",
+    title: "Nurse Practitioner",
     content:
       "The QA and testing services provided by Vasoya Brothers Infotech were exceptional. Identifying critical issues early saved us valuable time.",
-    name: "Rajimol Raju MSN",
-    role: "Marketing Director",
-    flag: "🇬🇧",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    name: "Katherine Diggs",
+    role: "Nurse Practitioner, United States of America ",
+    flag: "🇺🇸",
+    image: "",
   },
 ];
 
@@ -79,9 +70,7 @@ const Testimonials = () => {
           <p className="text-gray-600 text-base mb-6">
             See how our expert solutions have helped businesses achieve success through our client’s reviews.
           </p>
-          <button className="flex items-center gap-2 px-5 py-2 border border-orange-600 text-orange-600 rounded hover:bg-orange-50 transition">
-            📞 Contact Us
-          </button>
+      
         </div>
 
         {/* Right Side - Testimonial Cards */}

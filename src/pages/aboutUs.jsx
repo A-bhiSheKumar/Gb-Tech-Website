@@ -29,15 +29,25 @@ export default function AboutUsSection() {
   const reelVideos = [
     {
       src: "https://res.cloudinary.com/dgu2ct7us/video/upload/v1748800168/hnv0tbftam8fdqrhhmhc.mov",
-      title: "Our Work Culture",
-      description: "Behind the scenes at our creative space"
+      title: "",
+      description: "Behind the scenes at our creative space",
     },
     {
       src: "https://res.cloudinary.com/dgu2ct7us/video/upload/v1748801390/1748799974695847_wjkxcs.mov",
-      title: "Team Collaboration",
-      description: "How we work together to innovate"
+      title: "",
+      description: "How we work together to innovate",
     },
   ];
+
+  const [activeVideoIndex, setActiveVideoIndex] = useState(null);
+
+  const handleToggleMute = (index) => {
+    if (activeVideoIndex === index) {
+      setActiveVideoIndex(null); // mute if already active
+    } else {
+      setActiveVideoIndex(index); // unmute this and mute others
+    }
+  };
 
   return (
     <section className="py-16 px-6 bg-white text-gray-800">
@@ -66,34 +76,32 @@ export default function AboutUsSection() {
           ))}
         </div>
 
-      
         <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
           Get a glimpse of our team dynamics and work environment through these short clips
         </p>
-        
-        <div className="relative">
-          <div className="flex flex-wrap justify-center gap-8 px-4 py-2">
-            {reelVideos.map((video, index) => (
-              <VideoCard 
-                key={index} 
-                src={video.src} 
-                title={video.title}
-                description={video.description}
-              />
-            ))}
-          </div>
+
+        <div className="flex flex-wrap justify-center gap-8 px-4 py-2">
+          {reelVideos.map((video, index) => (
+            <VideoCard
+              key={index}
+              src={video.src}
+              title={video.title}
+              description={video.description}
+              muted={activeVideoIndex !== index}
+              onToggleMute={() => handleToggleMute(index)}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 }
 
-function VideoCard({ src, title, description }) {
-  const [muted, setMuted] = useState(true);
+function VideoCard({ src, title, description, muted, onToggleMute }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <div
       className="relative w-full max-w-[240px] h-[450px] bg-black rounded-xl overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -104,19 +112,17 @@ function VideoCard({ src, title, description }) {
         autoPlay
         loop
         playsInline
-        className={`w-full h-full object-cover transition-all duration-300 ${isHovered ? 'brightness-100' : 'brightness-90'}`}
+        className={`w-full h-full object-cover transition-all duration-300 ${isHovered ? "brightness-100" : "brightness-90"}`}
       />
-      
-      {/* Video Info Overlay */}
-      <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent transition-all duration-300 ${isHovered ? 'opacity-100' : 'opacity-90'}`}>
+
+      <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent transition-all duration-300 ${isHovered ? "opacity-100" : "opacity-90"}`}>
         <h3 className="text-white font-bold text-lg">{title}</h3>
         <p className="text-white/80 text-sm mt-1">{description}</p>
       </div>
-      
-      {/* Mute Button */}
+
       <button
-        onClick={() => setMuted(!muted)}
-        className={`absolute top-3 right-3 bg-black/50 text-white p-2 rounded-full transition-all duration-200 ${isHovered ? 'opacity-100' : 'opacity-80'}`}
+        onClick={onToggleMute}
+        className={`absolute top-3 right-3 bg-black/50 text-white p-2 rounded-full transition-all duration-200 ${isHovered ? "opacity-100" : "opacity-80"}`}
       >
         {muted ? (
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -128,8 +134,7 @@ function VideoCard({ src, title, description }) {
           </svg>
         )}
       </button>
-      
-      {/* Play Icon (shown when not hovered) */}
+
       {!isHovered && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="bg-black/30 rounded-full p-3">
