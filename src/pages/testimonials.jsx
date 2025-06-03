@@ -2,11 +2,11 @@ import React from "react";
 
 const testimonials = [
   {
-    title: "Owner and President of Nexcaliber and Entira Incorporated",
+    title: "Nexcaliber and Entira Incorporated",
     content:
       "We've worked with GBTECH SERVICE for over 10 years and their support, service quality, and responsiveness—despite the time zone difference—have been outstanding. Their team is a pleasure to work with, and I’m happy to personally share our success stories.",
     name: "David Feachen",
-    role: "Owner",
+    role: "Owner and President of Nexcaliber and Entira Incorporated",
     flag: "🇺🇸",
     image: "",
   },
